@@ -1,0 +1,30 @@
+name: flutter_application-{name}
+base: core20
+composable:
+confinement: strict
+description: |
+  Flutter Application
+grade: stable
+icon:
+summary: Flutter
+version: 'latest'
+
+apps:
+  flutter_application-{name}:
+    command: /bin/linux/flutter_application
+    environment:
+    extensions: [flutter-dev]
+    plugs:
+
+parts:
+  Flutter_application-{name}:
+    build-packages:
+    build-snaps:
+      - flutter
+    flutter-target: /lib/main.dart
+    plugin: flutter
+    source:
+    source-tag: 
+    source-type: git
+    stage-packages:
+    stage-snaps:  
