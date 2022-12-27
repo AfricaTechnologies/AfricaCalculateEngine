@@ -1,6 +1,5 @@
 name: flutter_application-{name}
 base: core20
-composable:
 confinement: strict
 description: |
   Flutter Application
@@ -17,7 +16,7 @@ apps:
     plugs:
 
 parts:
-  Flutter_application-{name}:
+  flutter_application-{name}:
     build-packages:
     build-snaps:
       - flutter
