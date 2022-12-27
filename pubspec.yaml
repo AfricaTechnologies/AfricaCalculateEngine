@@ -1,5 +1,5 @@
 name: africa_calculate_engine
-description: Africa Calculate Engine is an Open Source Mathematics Engine and Open Educational Resource. The function is to provide Calculators, Open Textbooks, Scans, Steps and promote OpenStax, Rice University.
+description: Open Source Mathematics Engine and Open Educational Resource
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
