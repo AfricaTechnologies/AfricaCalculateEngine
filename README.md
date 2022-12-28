@@ -9,7 +9,7 @@
   </h1>
 </a>
 
-[![Dart Action Workflow](https://github.com/AfricaTechnologies/AfricaCalculateEngine/actions/workflows/dart.yml/badge.svg)](https://github.com/AfricaTechnologies/AfricaCalculateEngine/actions/workflows/dart.yml)
+[![Flutter Action Workflow](https://github.com/AfricaTechnologies/AfricaCalculateEngine/actions/workflows/flutter.yml/badge.svg)](https://github.com/AfricaTechnologies/AfricaCalculateEngine/actions/workflows/flutter.yml)
 
 # Africa Calculate Engine
 
