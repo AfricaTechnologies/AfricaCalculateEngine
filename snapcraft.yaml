@@ -10,7 +10,7 @@ version: 'latest'
 
 apps:
   flutter_application-{name}:
-    command: /bin/linux/flutter_application
+    command: bin/linux/flutter_application
     environment:
     extensions: [flutter-dev]
     plugs:
@@ -20,7 +20,7 @@ parts:
     build-packages:
     build-snaps:
       - flutter
-    flutter-target: /lib/main.dart
+    flutter-target: lib/main.dart
     plugin: flutter
     source:
     source-tag: 
