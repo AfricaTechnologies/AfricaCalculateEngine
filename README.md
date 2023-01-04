@@ -36,8 +36,22 @@ Africa Calculate Engine is an Open Source Mathematics Engine and Open Educationa
 | Pre - Algebra Second Edition            | Beta  | Test          |
 | Statistics                              | Beta  | Test          |
 
-| Scans | Development | 
-| ----- | ----------- |
+| Scans        | Phase | Release Cycle |
+| ------------ | ----- | ------------- |
+| Algebra      | Alpha | Development   |
+| Basic        | Alpha | Development   |
+| Calculus     | Alpha | Development   |
+| Lists        | Alpha | Development   |
+| Matrices     | Alpha | Development   |
+| Statistics   | Alpha | Development   |
+| Trigonometry | Alpha | Development   |
 
-| Steps | Development |
-| ----- | ----------- |
+| Steps        | Phase | Release Cycle |
+| ------------ | ----- | ------------- |
+| Algebra      | Alpha | Development   |
+| Basic        | Alpha | Development   |
+| Calculus     | Alpha | Development   |
+| Lists        | Alpha | Development   |
+| Matrices     | Alpha | Development   |
+| Statistics   | Alpha | Development   |
+| Trigonometry | Alpha | Development   |
