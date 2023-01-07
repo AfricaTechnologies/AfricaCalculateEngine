@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:africa_calculate_engine/panellist.dart';
 
 class CalcTextbook extends StatefulWidget {
@@ -11,10 +13,23 @@ class CalcTextbook extends StatefulWidget {
 
 class _CalcTextbookState extends State<CalcTextbook> {
   final List<Item> _data = generateItems(1);
+  Future<void>? _launched;
+  Future<void> _launchInBrowser(Uri url) async {
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication,)) {
+      throw 'Could not Launch: $url';
+    }
+  }
 
   // Calculus Textbook Card Widget
   @override
   Widget build(BuildContext context) {
+    final Uri calculusVolume1 = Uri(scheme: 'https', host: 'assets.openstax.org', path: 'oscms-prodcms/media/documents/Calculus_Volume_1_-_WEB_68M1Z5W.pdf');
+    final Uri detailsCalculusVolume1 = Uri(scheme: 'https', host: 'openstax.org', path: 'details/books/calculus-volume-1');
+    final Uri calculusVolume2 = Uri(scheme: 'https', host: 'assets.openstax.org', path: 'oscms-prodcms/media/documents/CalculusVolume2-OP.pdf');
+    final Uri detailsCalculusVolume2 = Uri(scheme: 'https', host: 'openstax.org', path: 'details/books/calculus-volume-2');
+    final Uri calculusVolume3 = Uri(scheme: 'https', host: 'assets.openstax.org', path: 'oscms-prodcms/media/documents/CalculusVolume3-OP_mktoy8b.pdf');
+    final Uri detailsCalculusVolume3 = Uri(scheme: 'https', host: 'openstax.org', path: 'details/books/calculus-volume-3');
+    FutureBuilder<void>(future: _launched, builder: _launchStatus);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Calculus'),
@@ -52,15 +67,15 @@ class _CalcTextbookState extends State<CalcTextbook> {
                             children: <Widget>[
                               IconButton(
                                 icon: const Icon(Icons.download_rounded),
-                                onPressed: () {
-
-                                },
+                                onPressed: () => setState(() {
+                                  _launched = _launchInBrowser(calculusVolume1);
+                                }),
                               ),
-                              TextButton(
+                              ElevatedButton(
                                 child: const Text('OpenStax'),
-                                onPressed: () {
-
-                                },
+                                onPressed: () => setState(() {
+                                  _launched = _launchInBrowser(detailsCalculusVolume1);
+                                }),
                               ),
                             ],
                           ),
@@ -100,15 +115,15 @@ class _CalcTextbookState extends State<CalcTextbook> {
                             children: <Widget>[
                               IconButton(
                                 icon: const Icon(Icons.download_rounded),
-                                onPressed: () {
-
-                                },
+                                onPressed: () => setState(() {
+                                  _launched = _launchInBrowser(calculusVolume2);
+                                }),
                               ),
-                              TextButton(
+                              ElevatedButton(
                                 child: const Text('OpenStax'),
-                                onPressed: () {
-
-                                },
+                                onPressed: () => setState(() {
+                                  _launched = _launchInBrowser(detailsCalculusVolume2);
+                                }),
                               ),
                             ],
                           ),
@@ -148,15 +163,15 @@ class _CalcTextbookState extends State<CalcTextbook> {
                             children: <Widget>[
                               IconButton(
                                 icon: const Icon(Icons.download_rounded),
-                                onPressed: () {
-
-                                },
+                                onPressed: () => setState(() {
+                                  _launched = _launchInBrowser(calculusVolume3);
+                                }),
                               ),
-                              TextButton(
+                              ElevatedButton(
                                 child: const Text('OpenStax'),
-                                onPressed: () {
-
-                                },
+                                onPressed: () => setState(() {
+                                  _launched = _launchInBrowser(detailsCalculusVolume3);
+                                }),
                               ),
                             ],
                           ),
@@ -170,5 +185,12 @@ class _CalcTextbookState extends State<CalcTextbook> {
         ),
       ),
     );
+  }
+  Widget _launchStatus(BuildContext context, AsyncSnapshot<void> snapshot) {
+    if (snapshot.hasError) {
+      throw 'Error: ${snapshot.error}';
+    } else {
+      throw 'Launched: $snapshot';
+    }
   }
 }

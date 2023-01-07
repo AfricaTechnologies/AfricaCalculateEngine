@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:africa_calculate_engine/panellist.dart';
 
 class AboutCalculate extends StatefulWidget {
@@ -11,10 +13,19 @@ class AboutCalculate extends StatefulWidget {
 
 class _AboutCalculateState extends State<AboutCalculate> {
   final List<Item> _data = generateItems(1);
+  Future<void>? _launched;
+  Future<void> _launchInBrowser(Uri url) async {
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication,)) {
+      throw 'Could not Launch: $url';
+    }
+  }
 
   // About Calculate Card Widget
   @override
   Widget build(BuildContext context) {
+    final Uri toGitHub = Uri(scheme: 'https', host: 'github.com', path: 'AfricaTechnologies');
+    final Uri toSource = Uri(scheme: 'https', host: 'github.com', path: 'AfricaTechnologies/AfricaCalculateEngine');
+    FutureBuilder<void>(future: _launched, builder: _launchStatus);
     return Scaffold(
       appBar: AppBar(
         title: const Text('About'),
@@ -50,17 +61,17 @@ class _AboutCalculateState extends State<AboutCalculate> {
                           body: ButtonBar(
                             alignment: MainAxisAlignment.end,
                             children: <Widget>[
-                              IconButton(
-                                icon: const Icon(Icons.account_tree_rounded),
-                                onPressed: () {
-
-                                },
+                              ElevatedButton(
+                                child: const Text('GitHub Projects'),
+                                onPressed: () => setState(() {
+                                  _launched = _launchInBrowser(toGitHub);
+                                }),
                               ),
-                              TextButton(
+                              ElevatedButton(
                                 child: const Text('Source'),
-                                onPressed: () {
-                                
-                                },
+                                onPressed: () => setState(() {
+                                  _launched = _launchInBrowser(toSource);
+                                }),
                               ),
                             ],
                           ),
@@ -74,5 +85,12 @@ class _AboutCalculateState extends State<AboutCalculate> {
         ),
       ),
     );
+  }
+  Widget _launchStatus(BuildContext context, AsyncSnapshot<void> snapshot) {
+    if (snapshot.hasError) {
+      throw 'Error: ${snapshot.error}';
+    } else {
+      throw 'Launched: $snapshot';
+    }
   }
 }

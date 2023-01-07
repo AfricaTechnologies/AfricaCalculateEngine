@@ -30,7 +30,7 @@ class _CalculateEngineState extends State<CalculateEngine> {
           primaryColorDark: Colors.black,
           primarySwatch: Colors.blue,
       ),
-      initialRoute: 'DrawerRail',
+      initialRoute: 'DrawerTabBar',
       routes: {
         'AboutCalculate': (context) => const AboutCalculate(),
         'ATTextbook': (context) => const ATTextbook(),

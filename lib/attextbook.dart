@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:africa_calculate_engine/panellist.dart';
 
 class ATTextbook extends StatefulWidget {
@@ -11,10 +13,19 @@ class ATTextbook extends StatefulWidget {
 
 class _ATTextbookState extends State<ATTextbook> {
   final List<Item> _data = generateItems(1);
+  Future<void>? _launched;
+  Future<void> _launchInBrowser(Uri url) async {
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication,)) {
+      throw 'Could not Launch: $url';
+    }
+  }
 
   // Algebra and Trigonometry Textbook Card Widget
   @override
   Widget build(BuildContext context) {
+    final Uri algebraTrigonometry = Uri(scheme: 'https', host: 'assets.openstax.org', path: 'oscms-prodcms/media/documents/Algebra-and-Trigonometry-2e-WEB.pdf');
+    final Uri detailsAlgebraTrigonometry = Uri(scheme: 'https', host: 'openstax.org', path: 'details/books/algebra-and-trigonometry-2e');
+    FutureBuilder<void>(future: _launched, builder: _launchStatus);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Algebra and Trigonometry'),
@@ -52,15 +63,15 @@ class _ATTextbookState extends State<ATTextbook> {
                             children: <Widget>[
                               IconButton(
                                 icon: const Icon(Icons.download_rounded),
-                                onPressed: () {
-
-                                },
+                                onPressed: () => setState(() {
+                                  _launched = _launchInBrowser(algebraTrigonometry);
+                                }),
                               ),
-                              TextButton(
+                              ElevatedButton(
                                 child: const Text('OpenStax'),
-                                onPressed: () {
-
-                                },
+                                onPressed: () => setState(() {
+                                  _launched = _launchInBrowser(detailsAlgebraTrigonometry);
+                                }),
                               ),
                             ],
                           ),
@@ -74,5 +85,12 @@ class _ATTextbookState extends State<ATTextbook> {
         ),
       ),
     );
+  }
+  Widget _launchStatus(BuildContext context, AsyncSnapshot<void> snapshot) {
+    if (snapshot.hasError) {
+      throw 'Error: ${snapshot.error}';
+    } else {
+      throw 'Launched: $snapshot';
+    }
   }
 }
