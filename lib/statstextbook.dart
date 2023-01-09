@@ -28,6 +28,25 @@ class _StatsTextbookState extends State<StatsTextbook> {
     FutureBuilder<void>(future: _launched, builder: _launchStatus);
     return Scaffold(
       appBar: AppBar(
+        actions: <Widget>[
+          ButtonBar(
+            alignment: MainAxisAlignment.end,
+            children: <Widget>[
+              IconButton(
+                  icon: const Icon(Icons.info_outline_rounded),
+                  onPressed: () {
+
+                  }
+              ),
+              IconButton(
+                  icon: const Icon(Icons.settings_applications_outlined),
+                  onPressed: () {
+
+                  }
+              ),
+            ],
+          ),
+        ],
         title: const Text('Statistics'),
       ),
       body: Center(

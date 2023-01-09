@@ -21,6 +21,25 @@ class _DrawerRailState extends State<DrawerRail> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          actions: <Widget>[
+            ButtonBar(
+              alignment: MainAxisAlignment.end,
+              children: <Widget>[
+                IconButton(
+                    icon: const Icon(Icons.info_outline_rounded),
+                    onPressed: () {
+
+                    }
+                ),
+                IconButton(
+                    icon: const Icon(Icons.settings_applications_outlined),
+                    onPressed: () {
+
+                    }
+                ),
+              ],
+            ),
+          ],
         title: const Text('Textbooks'),
         ),
       drawer: Drawer(
