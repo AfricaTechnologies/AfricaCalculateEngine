@@ -17,41 +17,41 @@ Africa Calculate Engine is an Open Source Mathematics Engine and Open Educationa
 
 ## Features
   
-| Calculators  | Phase | Release Cycle | 
-| ------------ | ----- | ------------- |
-| Algebra      | Alpha | Development   |
-| Basic        | Alpha | Development   |
-| Calculus     | Alpha | Development   |
-| Lists        | Alpha | Development   |
-| Matrices     | Alpha | Development   |
-| Statistics   | Alpha | Development   |
-| Trigonometry | Alpha | Development   |
+| Calculators  | Period | Phase       | 
+|--------------|--------|-------------|
+| Algebra      | Alpha  | Development |
+| Basic        | Alpha  | Development |
+| Calculus     | Alpha  | Development |
+| Lists        | Alpha  | Development |
+| Matrices     | Alpha  | Development |
+| Statistics   | Alpha  | Development |
+| Trigonometry | Alpha  | Development |
 
-| Open Textbooks                          | Phase | Release Cycle | 
-| --------------------------------------- | ----- | ------------- |
-| Algebra and Trigonometry Second Edition | Beta  | Test          |
-| Calculus Volumes 1                      | Beta  | Test          |
-| Calculus Volumes 2                      | Beta  | Test          |
-| Calculus Volumes 3                      | Beta  | Test          |
-| Pre - Algebra Second Edition            | Beta  | Test          |
-| Statistics                              | Beta  | Test          |
+| Open Textbooks                          | Period | Phase | 
+|-----------------------------------------|--------|-------|
+| Algebra and Trigonometry Second Edition | Beta   | Test  |
+| Calculus Volumes 1                      | Beta   | Test  |
+| Calculus Volumes 2                      | Beta   | Test  |
+| Calculus Volumes 3                      | Beta   | Test  |
+| Pre - Algebra Second Edition            | Beta   | Test  |
+| Statistics                              | Beta   | Test  |
 
-| Scans        | Phase | Release Cycle |
-| ------------ | ----- | ------------- |
-| Algebra      | Alpha | Development   |
-| Basic        | Alpha | Development   |
-| Calculus     | Alpha | Development   |
-| Lists        | Alpha | Development   |
-| Matrices     | Alpha | Development   |
-| Statistics   | Alpha | Development   |
-| Trigonometry | Alpha | Development   |
+| Scans        | Period | Phase       |
+|--------------|--------|-------------|
+| Algebra      | Alpha  | Development |
+| Basic        | Alpha  | Development |
+| Calculus     | Alpha  | Development |
+| Lists        | Alpha  | Development |
+| Matrices     | Alpha  | Development |
+| Statistics   | Alpha  | Development |
+| Trigonometry | Alpha  | Development |
 
-| Steps        | Phase | Release Cycle |
-| ------------ | ----- | ------------- |
-| Algebra      | Alpha | Development   |
-| Basic        | Alpha | Development   |
-| Calculus     | Alpha | Development   |
-| Lists        | Alpha | Development   |
-| Matrices     | Alpha | Development   |
-| Statistics   | Alpha | Development   |
-| Trigonometry | Alpha | Development   |
+| Steps        | Period | Phase       |
+|--------------|--------|-------------|
+| Algebra      | Alpha  | Development |
+| Basic        | Alpha  | Development |
+| Calculus     | Alpha  | Development |
+| Lists        | Alpha  | Development |
+| Matrices     | Alpha  | Development |
+| Statistics   | Alpha  | Development |
+| Trigonometry | Alpha  | Development |
