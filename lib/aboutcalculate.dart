@@ -16,7 +16,7 @@ class _AboutCalculateState extends State<AboutCalculate> {
   Future<void>? _launched;
   Future<void> _launchInBrowser(Uri url) async {
     if (!await launchUrl(url, mode: LaunchMode.externalApplication,)) {
-      throw 'Could not Launch: $url';
+      return debugPrint('Could not Launch: $url');
     }
   }
 
